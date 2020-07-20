@@ -1,8 +1,9 @@
-<?
-$mysql_server = "url_do_servidor";
-$mysql_user = "usuário";
+<?php
+$mysql_server = "localhost";
+$mysql_user = "usuario";
 $mysql_pass = "senha";
-$mysql_db = "nome_do_banco";
-$conexao = mysql_connect($mysql_server, $mysql_user, $mysql_pass) or die("N&atilde;o foi possivel conectar ao banco!!" . $mysql_error);
-$banco = mysql_select_db($mysql_db, $conexao);
+$mysql_db = "rma";
+#$conexao = mysql_connect($mysql_server, $mysql_user, $mysql_pass) or die("N&atilde;o foi possivel conectar ao banco!!" . $mysql_error);
+$conexao = mysqli_connect($mysql_server, $mysql_user, $mysql_pass) or die("N&atilde;o foi possivel conectar ao banco!!" . $mysql_error);
+$banco = mysqli_select_db($conexao, $mysql_db);
 ?>

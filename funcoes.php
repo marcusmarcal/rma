@@ -1,4 +1,5 @@
-<?
+<?php
+
 function converte_data($data){
         if (strstr($data, "/")){
                 $A = explode ("/", $data);
@@ -24,15 +25,17 @@ function botao($nome_botao,$link){
 <form method="get" action="<? echo $link; ?>">
 <input type="submit" value="<? echo $nome_botao; ?>" class="botao" name="botao">
 </form>
-<? }
+<?php 
+}
+
 /*
-Funçao de cálculo de horas.
+Funï¿½ao de cï¿½lculo de horas.
 Pega duas datas e duas horas e calcula o quanto tempo em horas tem de uma a
 outra.
 Sempre arredonda para o inteiro mais alto.
 Sintaxe: int tempo(str $data1, str $hora1, srt $data2, str $hora2);
 Exemplo: tempo("1981-03-20","06:00:00",date("Y-m-d"),date("H:i:s"));
-Retorna o valor em horas, desde a data do meu nascimento até hoje (!!)
+Retorna o valor em horas, desde a data do meu nascimento atï¿½ hoje (!!)
 By Bluverts - bluverts@terra.com.br
 */
 function tempo($data1,$hora1,$data2,$hora2){
@@ -52,4 +55,3 @@ return $tempo;
 $data_agora = date("Y-m-d");
 $hora_agora = date("H:i:s");
 ?>
-

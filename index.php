@@ -1,4 +1,4 @@
-<?
+<?php 
 require("padrao.php");
 if(!isset($atualm) OR ($atualy)){
 $atualm = date('m');
@@ -16,7 +16,7 @@ $sql = "select * from rma where status like '$status_search' order by data_entra
 $sql = "select * from rma where status='pend_tec' or status='pend_adm' order by data_entrada desc,id desc";
 }
 
-$resultado = mysql_query($sql) or die(mysql_error());
+$resultado = mysqli_query($conexao, $sql);
 ?>
 <table border="0" align="center" width="65%" cellpadding="1" cellspacing="0">
 <tr>
@@ -26,33 +26,31 @@ $resultado = mysql_query($sql) or die(mysql_error());
 <select name="status_search">
 <option value="%%">Todos</option>
 <option value="fim">Finalizado</option>
-<option value="pend_tec">Pendente Técnica</option>
+<option value="pend_tec">Pendente Tï¿½cnica</option>
 <option value="pend_adm">Pendente Administrativo</option>
 <!--<option value="cancelado">Cancelados</option>-->
 </select><input type="submit" value="Filtrar"></form>
-<?
+<?php 
 if(isset($status_search)) echo "<font color=red>Filtro aplicado: " .  $status_search . "<br>";
 ?>
 </td>
 </tr>
 </table>
-<?
-?>
 <hr>
 <table border="1" cellpadding="0" cellspacing="5" align="center" width="100%">
 <tr>
 <th></th>
-<th><a href="?ordem=id"><? if($ordem == id){ ?><font color=red><? } ?>RMA</th>
-<th><a href="?ordem=modelo"><? if($ordem == modelo){ ?><font color=red><? } ?>Modelo</th>
-<th><a href="?ordem=status"><? if($ordem == status){ ?><font color=red><? } ?>Setor</th>
-<th><a href="?ordem=status2"><? if($ordem == status2){ ?><font color=red><? } ?>Pendência</th>
-<th><a href="?ordem=nome"><? if($ordem == nome){ ?><font color=red><? } ?>Nome Cliente</a></th>
-<th><a href="?ordem=data_entrada"><? if($ordem == data_entrada){ ?><font color=red><? } ?>Data Entrada</th>
+<th><a href="?ordem=id"><?php if($ordem == id){ ?><font color=red><?php } ?>RMA</th>
+<th><a href="?ordem=modelo"><?php if($ordem == modelo){ ?><font color=red><?php } ?>Modelo</th>
+<th><a href="?ordem=status"><?php if($ordem == status){ ?><font color=red><?php } ?>Setor</th>
+<th><a href="?ordem=status2"><?php if($ordem == status2){ ?><font color=red><?php } ?>Pendï¿½ncia</th>
+<th><a href="?ordem=nome"><?php if($ordem == nome){ ?><font color=red><?php } ?>Nome Cliente</a></th>
+<th><a href="?ordem=data_entrada"><?php if($ordem == data_entrada){ ?><font color=red><?php } ?>Data Entrada</th>
 <th>Tempo de Espera</th>
 </tr>
-<?
+<?php 
 $num = 1;
-while($linha = mysql_fetch_array($resultado)){
+while($linha = mysqli_fetch_array($conexao, $resultado)){
 $id = $linha['id'];
 $data_entrada = $linha['data_entrada'];
 $nome = $linha['nome'];
@@ -94,7 +92,7 @@ switch ($status) {
        $status = "<font color=\"black\"><b>Finalizado";
        break;
    case "pend_tec":
-       $status = "<font color=\"red\"><b>Técnica";
+       $status = "<font color=\"red\"><b>Tï¿½cnica";
        break;
    case "pend_adm":
        $status = "<font color=\"green\"><b>Admin.";
@@ -105,13 +103,13 @@ switch ($status) {
 }
 switch ($status2) {
    case 0:
-       $fase = "<font color=\"red\"><b>Diagnóstico";
+       $fase = "<font color=\"red\"><b>Diagnï¿½stico";
        break;
    case 1:
-       $fase = "<font color=\"black\"><b>Orçamento";
+       $fase = "<font color=\"black\"><b>Orï¿½amento";
        break;
    case 2:
-       $fase = "<font color=\"blue\"><b>Aprovação";
+       $fase = "<font color=\"blue\"><b>Aprovaï¿½ï¿½o";
        break;
    case 3:
        $fase = "<font color=\"orange\"><b>Conserto";
@@ -132,8 +130,8 @@ switch ($garantia) {
        $garantia = "Sim";
        $gcolor = "red";
        break;
-   case "não":
-       $garantia = "Não";
+   case "nï¿½o":
+       $garantia = "Nï¿½o";
        $gcolor = "";
        break;
 }
@@ -142,21 +140,21 @@ switch ($garantia) {
        $garantia = "Sim";
        $gcolor = "red";
        break;
-   case "não":
-       $garantia = "Não";
+   case "nï¿½o":
+       $garantia = "Nï¿½o";
        $gcolor = "";
        break;
 }
 
 ?>
        <tr>
-           <td align="center"><? echo $num; ?></td>
-           <td align="center">&nbsp;&nbsp;<a href="responder.php?id=<? echo $id; ?>"><font size="3"><? echo $id; ?></font></a>&nbsp;&nbsp;</td>
-           <td>&nbsp;<? echo $modelo; ?></td>
-           <td align="center">&nbsp;<? echo $status; ?></td>
-           <td align="center">&nbsp;<? echo $fase; ?></td>
-           <td>&nbsp;<? echo $nome; ?></td>
-           <td align="center">&nbsp;<? echo converte_data($data_entrada); ?></td>
+           <td align="center"><?php echo $num; ?></td>
+           <td align="center">&nbsp;&nbsp;<a href="responder.php?id=<?php echo $id; ?>"><font size="3"><?php echo $id; ?></font></a>&nbsp;&nbsp;</td>
+           <td>&nbsp;<?php echo $modelo; ?></td>
+           <td align="center">&nbsp;<?php echo $status; ?></td>
+           <td align="center">&nbsp;<?php echo $fase; ?></td>
+           <td>&nbsp;<?php echo $nome; ?></td>
+           <td align="center">&nbsp;<?php echo converte_data($data_entrada); ?></td>
            <td align="center">&nbsp;
                         <?
                           if($status2 == 7) {
@@ -182,7 +180,7 @@ switch ($garantia) {
                         ?>
            </td>
        </tr>
-<?
+<?php
 $num++;
 }
 ?>

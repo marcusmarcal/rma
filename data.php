@@ -1,5 +1,7 @@
-<?
-$user = $REMOTE_USER;
+<?php
+/*
+// Deprecated PHP7
+$user = $_SERVER['REMOTE_USER'];
 if($user == 'claudia'){
 $nome = "Claudia";
 }
@@ -13,7 +15,7 @@ if($user == 'ivan'){
 $nome = "Ivan Monteiro";
 }
 if($user == 'andre'){
-$nome = "Carlos André Cabral";
+$nome = "Carlos Andrï¿½ Cabral";
 }
 if($user == 'rodrigo'){
 $nome = "Rodrigo";
@@ -22,33 +24,35 @@ if($user == 'marcio'){
 $nome = "Marcio";
 }
 if($user == 'marcus'){
-$nome = "Marcus Marçal";
+$nome = "Marcus Marï¿½al";
 }
 if($user == 'leonardo'){
 $nome = "Leonardo Faleiro";
 }
+*/
 
-$datadia=date("d");  //Retornao dia do mês com dois dígitos e zeros à esquerda (de 01 a 31).
-$dataano=date("Y");  //Retorna o ano no formato de quatro dígitos (2000, 2001, etc.).
+$nome = "Dionei";
+$datadia=date("d");  //Retornao dia do mï¿½s com dois dï¿½gitos e zeros ï¿½ esquerda (de 01 a 31).
+$dataano=date("Y");  //Retorna o ano no formato de quatro dï¿½gitos (2000, 2001, etc.).
 
 //armazena os dias da semana na matriz $diasemana
 
-$dia=date("w");  //Retorna o dia da semana numérico (0=domingo, 1=segunda,etc.).
+$dia=date("w");  //Retorna o dia da semana numï¿½rico (0=domingo, 1=segunda,etc.).
 $diasemana[0]="Domingo";
 $diasemana[1]="Segunda-feira";
-$diasemana[2]="Terça-feira";
+$diasemana[2]="Terï¿½a-feira";
 $diasemana[3]="Quarta-feira";
 $diasemana[4]="Quinta-feira";
 $diasemana[5]="Sexta-feira";
-$diasemana[6]="Sábado";
+$diasemana[6]="Sï¿½bado";
 
 
 //armazena os meses do ano na matriz $mesano
 
-$mes=date("n"); //Retorna o mês do ano, representado por um número (1 a12).
+$mes=date("n"); //Retorna o mï¿½s do ano, representado por um nï¿½mero (1 a12).
 $mesano[1]="janeiro";
 $mesano[2]="fevereiro";
-$mesano[3]="março";
+$mesano[3]="marï¿½o";
 $mesano[4]="abril";
 $mesano[5]="maio";
 $mesano[6]="junho";
@@ -59,7 +63,7 @@ $mesano[10]="outubro";
 $mesano[11]="novembro";
 $mesano[12]="dezembro";
 
-// Exibir uma data com saudação
+// Exibir uma data com saudaï¿½ï¿½o
 
 $hora=date("G");
 $minuto=date("i");
