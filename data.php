@@ -1,36 +1,4 @@
 <?php
-/*
-// Deprecated PHP7
-$user = $_SERVER['REMOTE_USER'];
-if($user == 'claudia'){
-$nome = "Claudia";
-}
-if($user == 'leticia'){
-$nome = "Leticia";
-}
-if($user == 'tatiane'){
-$nome = "Tatiane";
-}
-if($user == 'ivan'){
-$nome = "Ivan Monteiro";
-}
-if($user == 'andre'){
-$nome = "Carlos Andr� Cabral";
-}
-if($user == 'rodrigo'){
-$nome = "Rodrigo";
-}
-if($user == 'marcio'){
-$nome = "Marcio";
-}
-if($user == 'marcus'){
-$nome = "Marcus Mar�al";
-}
-if($user == 'leonardo'){
-$nome = "Leonardo Faleiro";
-}
-*/
-
 $nome = "Dionei";
 $datadia=date("d");  //Retornao dia do m�s com dois d�gitos e zeros � esquerda (de 01 a 31).
 $dataano=date("Y");  //Retorna o ano no formato de quatro d�gitos (2000, 2001, etc.).

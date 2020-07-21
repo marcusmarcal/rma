@@ -17,6 +17,7 @@ $sql = "select * from rma where status='pend_tec' or status='pend_adm' order by 
 }
 
 $resultado = mysqli_query($conexao, $sql);
+
 ?>
 <table border="0" align="center" width="65%" cellpadding="1" cellspacing="0">
 <tr>
@@ -50,7 +51,7 @@ if(isset($status_search)) echo "<font color=red>Filtro aplicado: " .  $status_se
 </tr>
 <?php 
 $num = 1;
-while($linha = mysqli_fetch_array($conexao, $resultado)){
+while($linha = mysqli_fetch_array($resultado)){
 $id = $linha['id'];
 $data_entrada = $linha['data_entrada'];
 $nome = $linha['nome'];
@@ -182,6 +183,10 @@ switch ($garantia) {
        </tr>
 <?php
 $num++;
+}
+if (!$resultado) {
+    printf("Error: %s\n", mysqli_error($conexao));
+    exit();
 }
 ?>
 </BODY>

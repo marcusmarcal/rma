@@ -1,13 +1,13 @@
-<?
+<?php
 require("padrao.php");
 ?>
 <center>
 <form action="add.php" METHOD="get">
-        <input type="hidden" name="responsavel" value="<? echo $nome; ?>">
+        <input type="hidden" name="responsavel" value="<?php echo $nome; ?>">
 
 <table width="100%" border="0" align="center">
        <tr>
-           <td width="20%">&nbsp;Responsável:</td>
+           <td width="20%">&nbsp;Responsï¿½vel:</td>
            <td><b><? echo $nome; ?></b></td>
        </tr>
        <tr>
@@ -34,7 +34,7 @@ require("padrao.php");
            <td><input  type="text" name="br" size="6"></td>
        </tr>
        <tr>
-           <td>&nbsp;Nº de Série:</td>
+           <td>&nbsp;Nï¿½ de Sï¿½rie:</td>
            <td><input  type="text" name="serie" size="20"></td>
        </tr>
        <tr>
@@ -47,13 +47,13 @@ require("padrao.php");
        </tr>
        <tr>
            <td>&nbsp;Data NF de Venda:</td>
-           <td><input  type="text" name="data_nf_venda" size="10" value="00/00/0000">&nbsp; Atenção! Formato "01/01/1970"</td>
+           <td><input  type="text" name="data_nf_venda" size="10" value="00/00/0000">&nbsp; Atenï¿½ï¿½o! Formato "01/01/1970"</td>
        </tr>
        <tr>
            <td>&nbsp;Garantia</td>
            <td>
                <select name="garantia">
-                       <option value="não">NÃO</option>
+                       <option value="nï¿½o">Nï¿½O</option>
                        <option value="sim">SIM</option>
                </select>
            </td>
@@ -63,7 +63,7 @@ require("padrao.php");
            <td><input  type="text" name="nf_remessa" size="6"></td>
        </tr>
        <tr>
-           <td>&nbsp;Acessórios:</td>
+           <td>&nbsp;Acessï¿½rios:</td>
            <td>
                Conector:<input type="checkbox" name="conector" value="sim" />
                &nbsp;&nbsp;&nbsp;Fonte:<input type="checkbox" name="fonte" value="sim" />
@@ -73,7 +73,7 @@ require("padrao.php");
            </td>
        </tr>
        <tr>
-           <td>&nbsp;Outras Informações:</td>
+           <td>&nbsp;Outras Informaï¿½ï¿½es:</td>
            <td><textarea name="outros" cols="25" ></textarea></td>
        </tr>
        <tr>
