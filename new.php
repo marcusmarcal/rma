@@ -7,7 +7,7 @@ require("padrao.php");
 
 <table width="100%" border="0" align="center">
        <tr>
-           <td width="20%">&nbsp;Respons�vel:</td>
+           <td width="20%">&nbsp;Respons&aacute;vel:</td>
            <td><b><? echo $nome; ?></b></td>
        </tr>
        <tr>
