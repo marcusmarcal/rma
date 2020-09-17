@@ -33,5 +33,5 @@ services:
         command: --default-authentication-plugin=mysql_native_password
         restart: always
         environment:
-            MYSQL_ROOT_PASSWORD: Uws012aQ=!
-            MYSQL_DATABASE: br
+            MYSQL_ROOT_PASSWORD: uSD97a!@12?
+            MYSQL_DATABASE: rma
